@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:questionnaire 业务对像:AnswerRecord 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- AnswerRecord 管理 首页(列表页) -->
+	<definition name="questionnaire.answerRecord.manager" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answerRecord/answerRecord_center.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- AnswerRecord 新增,编辑页面 -->
+	<definition name="questionnaire.answerRecord.update" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answerRecord/answerRecord_update.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- AnswerRecord 明细页 -->
+	<definition name="questionnaire.answerRecord.detail" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answerRecord/answerRecord_detail.jsp"></put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>

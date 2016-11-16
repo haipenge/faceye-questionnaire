@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:questionnaire 业务对像:Questionnaire 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Questionnaire 管理 首页(列表页) -->
+	<definition name="questionnaire.questionnaire.manager" extends="questionnaire.mobile">
+	    <put-attribute name="default-center" value="/component/questionnaire/questionnaire/questionnaire_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Questionnaire 新增,编辑页面 -->
+	<definition name="questionnaire.questionnaire.update" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/questionnaire/questionnaire_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Questionnaire 明细页 -->
+	<definition name="questionnaire.questionnaire.detail" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/questionnaire/questionnaire_detail.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Questionnaire 明细页-Info -->
+	<definition name="questionnaire.questionnaire.detail.info" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/questionnaire/questionnaire_detail_info.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Questionnaire 明细页-Info step 2 开始测试 -->
+	<definition name="questionnaire.questionnaire.detail.info.setp.2" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/questionnaire/questionnaire_detail_info_step_2.jsp"></put-attribute>
+	</definition>
+
+	
+</tiles-definitions>

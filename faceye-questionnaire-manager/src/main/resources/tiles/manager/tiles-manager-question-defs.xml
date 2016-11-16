@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:questionnaire 业务对像:Question 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Question 管理 首页(列表页) -->
+	<definition name="questionnaire.question.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.question.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.question.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/question/question_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Question 新增,编辑页面 -->
+	<definition name="questionnaire.question.update" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.question.update.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.question.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/question/question_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Question 明细页 -->
+	<definition name="questionnaire.question.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.question.detail.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.question.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/question/question_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:questionnaire 业务对像:Answer 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Answer 管理 首页(列表页) -->
+	<definition name="questionnaire.answer.manager" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answer/answer_center.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- Answer 新增,编辑页面 -->
+	<definition name="questionnaire.answer.update" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answer/answer_update.jsp"></put-attribute>
+	</definition>
+	
+	
+	<!-- Answer 明细页 -->
+	<definition name="questionnaire.answer.detail" extends="questionnaire.empty">
+	    <put-attribute name="default-center" value="/component/questionnaire/answer/answer_detail.jsp"></put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>

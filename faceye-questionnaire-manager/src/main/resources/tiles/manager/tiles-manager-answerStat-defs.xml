@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:questionnaire 业务对像:AnswerStat 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- AnswerStat 管理 首页(列表页) -->
+	<definition name="questionnaire.answerStat.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.answerStat.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.answerStat.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/answerStat/answerStat_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- AnswerStat 新增,编辑页面 -->
+	<definition name="questionnaire.answerStat.update" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.answerStat.update.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.answerStat.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/answerStat/answerStat_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- AnswerStat 明细页 -->
+	<definition name="questionnaire.answerStat.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="questionnaire.answerStat.detail.center"></put-attribute>
+	</definition>
+	<definition name="questionnaire.answerStat.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/questionnaire/answerStat/answerStat_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

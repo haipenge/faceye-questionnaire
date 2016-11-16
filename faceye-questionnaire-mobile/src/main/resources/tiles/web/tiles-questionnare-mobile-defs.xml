@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- 默认的Web 页面模板 -->
+	<definition name="questionnaire.mobile"
+		template="/component/questionnaire/template/default_template.jsp">
+		<put-attribute name="default-header"
+			value="/component/questionnaire/template/default_header.jsp"></put-attribute>
+		<put-attribute name="default-center"
+			value="/component/questionnaire/template/default_center.jsp"></put-attribute>
+		<put-attribute name="default-footer"
+			value="/component/questionnaire/template/default_footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="questionnaire.simple" template="/component/questionnaire/template/default_simple.jsp"> 
+	    <put-attribute name="default-header" value="/component/questionnaire/template/default_simple_header.jsp"></put-attribute>
+	   <put-attribute name="default-center"
+			value="/component/questionnaire/template/default_center.jsp"></put-attribute>
+		<put-attribute name="default-footer"
+			value="/component/questionnaire/template/copyright_footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="questionnaire.empty" template="/component/questionnaire/template/default_empty.jsp">
+	    <put-attribute name="default-center"
+			value="/component/questionnaire/template/default_empty.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="questionnaire.clean" template="/component/questionnaire/template/default_clean.jsp"> 
+	   <put-attribute name="default-center"
+			value="/component/questionnaire/template/default_center.jsp"></put-attribute>
+		<put-attribute name="default-footer"
+			value="/component/questionnaire/template/default_footer.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="questionnaire.about" extends="questionnaire.mobile">
+	    <put-attribute name="default-center" value="/component/setting/about/default.jsp"></put-attribute>
+	</definition>
+	<!-- 我的 -->
+	<definition name="questionnaire.me" extends="questionnaire.empty">
+	   <put-attribute name="default-center" value="/component/questionnaire/template/default_me.jsp"></put-attribute>
+	</definition>
+	
+	<!-- MSG -->
+	<definition name="questionnaire.msg" extends="questionnaire.empty">
+	   <put-attribute name="default-center" value="/component/questionnaire/template/default_msg.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 用户登陆 -->
+	<definition name="security.web.user.login" extends="questionnaire.simple">
+	    <put-attribute name="default-header" value="/component/security/web/user/login_header.jsp"></put-attribute>
+	    <put-attribute name="default-center" value="/component/security/web/user/login.jsp"></put-attribute>
+	    <put-attribute name="default-footer" value="/component/questionnaire/template/copyright_footer.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 用户注册 -->
+	<definition name="security.web.user.register" extends="questionnaire.simple">
+	    <put-attribute name="default-header" value="/component/security/web/user/user_register_header.jsp"></put-attribute>
+	    <put-attribute name="default-center" value="/component/security/web/user/user_register.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
