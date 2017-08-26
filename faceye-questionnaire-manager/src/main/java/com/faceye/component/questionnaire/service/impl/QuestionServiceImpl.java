@@ -49,7 +49,7 @@ public class QuestionServiceImpl extends BaseMongoServiceImpl<Question, Long, Qu
 	}
 
 	@Override
-	public Page<Question> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Question> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

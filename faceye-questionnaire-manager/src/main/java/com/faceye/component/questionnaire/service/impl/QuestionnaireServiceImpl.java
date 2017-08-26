@@ -53,7 +53,7 @@ public class QuestionnaireServiceImpl extends BaseMongoServiceImpl<Questionnaire
 		super(dao);
 	}
 
-	public void save(Questionnaire questionnaire) {
+	public Questionnaire save(Questionnaire questionnaire) {
 		super.save(questionnaire);
 		String content = questionnaire.getRemark();
 		String DISTILL_IMG_SRC = "<img[^>]*?src=[\"\\']?([^\"\\'>]+)[\"\\']?[^>]*\\/>";
@@ -84,11 +84,12 @@ public class QuestionnaireServiceImpl extends BaseMongoServiceImpl<Questionnaire
 			questionnaire.setUploadFiles(uploadFiles);
 			super.save(questionnaire);
 		}
+		return questionnaire;
 
 	}
 
 	@Override
-	public Page<Questionnaire> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Questionnaire> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

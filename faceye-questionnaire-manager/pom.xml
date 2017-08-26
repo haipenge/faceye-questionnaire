@@ -20,7 +20,7 @@
 		<querydsl.version>4.1.2</querydsl.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
 		<junit.version>4.11</junit.version>
-		<spring.version>4.2.5.RELEASE</spring.version>
+		<spring.version>4.3.9.RELEASE</spring.version>
 		<faceye-weixin-manager.version>1.0</faceye-weixin-manager.version>
 	</properties>
 	<dependencies>
@@ -86,7 +86,7 @@
 				<filtering>true</filtering>
 			</resource>
 			<resource>
-				<directory>../../faceye-security/faceye-security-manager-mongo/src/main/resources</directory>
+				<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources</directory>
 				<includes>
 					<include>tiles/manager/*.*</include>
 					<include>conf/applicationContext-security.xml</include>
@@ -127,7 +127,7 @@
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 						<descriptor>src/main/webapp/WEB-INF/web.xml</descriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-generate/faceye-generate-manager/src/main/webapp,../../faceye-security/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp</resourcesAsCSV>
+							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-generate/faceye-generate-manager/src/main/webapp,../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp</resourcesAsCSV>
 						</baseResource>
 					</webApp>
 				</configuration>
@@ -190,7 +190,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-manager-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -205,7 +205,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-entity-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-entity-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -349,7 +349,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -393,7 +393,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -441,7 +441,7 @@
 									<filtering>true</filtering>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-generate/faceye-generate-manager/src/main/webapp</directory>
@@ -487,20 +487,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository> <id>nexus-oschina</id> <name>local private nexus</name> 
-			<url>http://maven.oschina.net/content/groups/public/</url> <releases> <enabled>true</enabled> 
-			</releases> <snapshots> <enabled>false</enabled> </snapshots> </repository>
-		<repository>
-			<id>maven-net-cn</id>
-			<name>Maven China Mirror</name>
-			<url>http://maven.net.cn/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+		
 		<repository>
 			<id>querydsl</id>
 			<url>http://www.querydsl.com/maven</url>
@@ -546,20 +533,7 @@
 		</repository>
 	</repositories>
 	<pluginRepositories>
-		<pluginRepository> <id>nexus-oschina</id> <name>local private nexus</name> 
-			<url>http://maven.oschina.net/content/groups/public/</url> <releases> <enabled>true</enabled> 
-			</releases> <snapshots> <enabled>false</enabled> </snapshots> </pluginRepository>
-		<pluginRepository>
-			<id>maven-net-cn</id>
-			<name>Maven China Mirror</name>
-			<url>http://maven.net.cn/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
+		
 		<pluginRepository>
 			<id>com.springsource.repository.bundles.release</id>
 			<url>http://repository.springsource.com/maven/bundles/release</url>

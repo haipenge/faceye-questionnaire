@@ -29,7 +29,7 @@ public class QuestionnaireTypeServiceImpl extends BaseMongoServiceImpl<Questionn
 	
 	
 	@Override
-	public Page<QuestionnaireType> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<QuestionnaireType> getPage(Map<String, Object> searchParams, int page, int size){
 		if (page != 0) {
 			page = page - 1;
 		}
