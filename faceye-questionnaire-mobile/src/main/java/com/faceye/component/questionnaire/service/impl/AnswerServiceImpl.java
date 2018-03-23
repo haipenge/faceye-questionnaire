@@ -29,7 +29,7 @@ import com.faceye.component.questionnaire.service.RabbitService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.faceye.feature.service.impl.PrintReporter;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.util.bean.BeanContextUtil;
 import com.querydsl.core.types.Predicate;
 
@@ -51,7 +51,7 @@ public class AnswerServiceImpl extends BaseMongoServiceImpl<Answer, Long, Answer
 	}
 
 	@Override
-	public Page<Answer> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Answer> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -90,7 +90,7 @@ public class AnswerServiceImpl extends BaseMongoServiceImpl<Answer, Long, Answer
 		Boolean isChecked = MapUtils.getBoolean(params, "isChecked");
 		String type = MapUtils.getString(params, "type");
 		Rabbit rabbit = this.rabbitService.getCurrentLoginRabbit();
-		BeanContextUtil.getInstance().getBean(PrintReporter.class).reporter(params);
+		BeanContextUtil.getBean(PrintReporter.class).reporter(params);
 		Answer answer = this.get(answerId);
 		if (rabbit != null) {
 			Map searchAnswerRecordParams = new HashMap();

@@ -17,7 +17,7 @@ import com.faceye.component.questionnaire.repository.mongo.QuestionnaireTypeRepo
 import com.faceye.component.questionnaire.service.QuestionnaireTypeService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class QuestionnaireTypeServiceImpl extends BaseMongoServiceImpl<QuestionnaireType, Long, QuestionnaireTypeRepository> implements QuestionnaireTypeService {

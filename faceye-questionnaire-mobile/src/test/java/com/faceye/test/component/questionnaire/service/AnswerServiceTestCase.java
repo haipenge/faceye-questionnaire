@@ -13,7 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.questionnaire.entity.Answer;
 import com.faceye.component.questionnaire.service.AnswerService;
@@ -37,7 +37,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 	 */
 	@Before
 	public void set() throws Exception {
-		Assert.isTrue(answerService != null);
+		Assert.assertTrue(answerService != null);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		Answer entity = new Answer();
 		this.answerService.save(entity);
 		List<Answer> entites = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(entites));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(entites));
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		Answer entity = new Answer();
 		this.answerService.save(entity);
 		List<Answer> entites = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(entites));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(entites));
 	}
 
 	@Test
@@ -82,7 +82,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 			this.answerService.save(entity);
 		}
 		List<Answer> entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		this.answerService.save(entity);
 		logger.debug(">>Entity id is:" + entity.getId());
 		Answer e = this.answerService.get(entity.getId());
-		Assert.isTrue(e != null);
+		Assert.assertTrue(e != null);
 	}
 
 	@Test
@@ -100,7 +100,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		this.answerService.save(entity);
 		this.answerService.remove(entity);
 		List<Answer> entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(entities));
+		Assert.assertTrue(CollectionUtils.isEmpty(entities));
 	}
 
 	@Test
@@ -110,10 +110,10 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 			this.answerService.save(entity);
 		}
 		List<Answer> entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
 		this.answerService.removeAllInBatch();
 		entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(entities));
+		Assert.assertTrue(CollectionUtils.isEmpty(entities));
 	}
 
 	@Test
@@ -124,7 +124,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		}
 		this.answerService.removeAll();
 		List<Answer> entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(entities));
+		Assert.assertTrue(CollectionUtils.isEmpty(entities));
 	}
 
 	@Test
@@ -138,7 +138,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		}
 		this.answerService.removeInBatch(entities);
 		entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(entities));
+		Assert.assertTrue(CollectionUtils.isEmpty(entities));
 	}
 
 	@Test
@@ -148,7 +148,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 			this.answerService.save(entity);
 		}
 		List<Answer> entities = this.answerService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(entities) && entities.size() == 5);
 	}
 
 	@Test
@@ -159,15 +159,15 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 		}
 		Map<String, Object> searchParams = new HashMap<String, Object>();
 		Page<Answer> page = this.answerService.getPage(searchParams, 1, 5);
-		Assert.isTrue(page != null && page.getSize() == 5);
+		Assert.assertTrue(page != null && page.getSize() == 5);
 		searchParams.put("EQ_name", "test-10");
 		page = this.answerService.getPage(searchParams, 1, 5);
-		Assert.isTrue(page != null && page.getTotalElements() == 1);
+		Assert.assertTrue(page != null && page.getTotalElements() == 1);
 		searchParams = new HashMap<String, Object>();
 		searchParams.put("LIKE_name", "test");
 		page = this.answerService.getPage(searchParams, 1, 5);
 
-		Assert.isTrue(page != null && page.getTotalElements() == 25 && page.getNumberOfElements() == 5);
+		Assert.assertTrue(page != null && page.getTotalElements() == 25 && page.getNumberOfElements() == 5);
 
 	}
 
@@ -180,7 +180,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 			id = entity.getId();
 		}
 		Answer e = this.answerService.get(id);
-		Assert.isTrue(e != null);
+		Assert.assertTrue(e != null);
 	}
 
 	@Test
@@ -194,7 +194,7 @@ public class AnswerServiceTestCase extends BaseServiceTestCase {
 			}
 		}
 		List<Answer> entities = this.answerService.getAll(ids);
-		Assert.isTrue(entities != null && entities.size() == 5);
+		Assert.assertTrue(entities != null && entities.size() == 5);
 	}
 
 

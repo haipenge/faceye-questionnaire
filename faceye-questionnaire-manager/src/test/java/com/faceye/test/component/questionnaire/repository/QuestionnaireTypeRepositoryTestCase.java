@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.questionnaire.entity.QuestionnaireType;
 import com.faceye.component.questionnaire.repository.mongo.QuestionnaireTypeRepository;
@@ -34,24 +34,24 @@ public class QuestionnaireTypeRepositoryTestCase extends BaseRepositoryTestCase 
 		QuestionnaireType entity = new QuestionnaireType();
 		this.questionnaireTypeRepository.save(entity);
 		Iterable<QuestionnaireType> entities = this.questionnaireTypeRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		QuestionnaireType entity = new QuestionnaireType();
 		this.questionnaireTypeRepository.save(entity);
-        this.questionnaireTypeRepository.delete(entity.getId());
+        this.questionnaireTypeRepository.deleteById(entity.getId());
         Iterable<QuestionnaireType> entities = this.questionnaireTypeRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		QuestionnaireType entity = new QuestionnaireType();
 		this.questionnaireTypeRepository.save(entity);
-		QuestionnaireType questionnaireType=this.questionnaireTypeRepository.findOne(entity.getId());
-		Assert.isTrue(questionnaireType!=null);
+		QuestionnaireType questionnaireType=this.questionnaireTypeRepository.findById(entity.getId()).get();
+		Assert.assertTrue(questionnaireType!=null);
 	}
 
 	

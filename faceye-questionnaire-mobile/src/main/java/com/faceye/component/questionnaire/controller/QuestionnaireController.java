@@ -329,7 +329,7 @@ public class QuestionnaireController extends BaseController<Questionnaire, Long,
 	public WeixinShareRequest getWeixinShareRequest(HttpServletRequest request, HttpServletResponse response) {
 		Account account = null;
 		WeixinShareRequest weixinShareRequest = new WeixinShareRequest();
-		String host = BeanContextUtil.getInstance().getBean(PropertyService.class).get("weixin.host");
+		String host = BeanContextUtil.getBean(PropertyService.class).get("weixin.host");
 		Map params = HttpUtil.getRequestParams(request);
 		Long id = MapUtils.getLong(params, "id");
 		Long accountId = MapUtils.getLong(params, "accountId");

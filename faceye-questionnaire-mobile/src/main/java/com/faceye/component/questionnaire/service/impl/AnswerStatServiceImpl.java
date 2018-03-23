@@ -17,7 +17,7 @@ import com.faceye.component.questionnaire.repository.mongo.AnswerStatRepository;
 import com.faceye.component.questionnaire.service.AnswerStatService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class AnswerStatServiceImpl extends BaseMongoServiceImpl<AnswerStat, Long, AnswerStatRepository> implements AnswerStatService {
@@ -29,7 +29,7 @@ public class AnswerStatServiceImpl extends BaseMongoServiceImpl<AnswerStat, Long
 	
 	
 	@Override
-	public Page<AnswerStat> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<AnswerStat> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

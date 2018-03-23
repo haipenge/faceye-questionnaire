@@ -3,6 +3,7 @@ package com.faceye.component.questionnaire.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,23 +11,18 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.validation.BindingResult;
-import javax.validation.Valid;
 
 import com.faceye.component.questionnaire.entity.AnswerStat;
 import com.faceye.component.questionnaire.service.AnswerStatService;
-
-import com.faceye.feature.util.AjaxResult;
-import com.faceye.feature.util.MathUtil;
-import com.faceye.feature.util.http.HttpUtil;
-import com.faceye.feature.util.regexp.RegexpUtil;
-import com.faceye.feature.util.AjaxResult;
 import com.faceye.feature.controller.BaseController;
+import com.faceye.feature.util.AjaxResult;
+import com.faceye.feature.util.http.HttpUtil;
 
 /**
  * 模块:questionnaire<br>
@@ -57,7 +53,7 @@ public class AnswerStatController extends BaseController<AnswerStat, Long, Answe
 	public Page<AnswerStat> home(HttpServletRequest request, Model model) {
 		Map searchParams=HttpUtil.getRequestParams(request);
 		Page<AnswerStat> page = this.service.getPage(searchParams, getPage(searchParams), getSize(searchParams));
-		return page
+		return page;
 	}
 
 	/**
@@ -157,8 +153,9 @@ public class AnswerStatController extends BaseController<AnswerStat, Long, Answe
 	@RequestMapping("/detail/{id}")
 	@ResponseBody
 	public AnswerStat detail(@PathVariable Long id,Model model){
+		AnswerStat answerStat =null;
 		if(id!=null){
-			AnswerStat answerStat=this.service.get(id);
+			 answerStat=this.service.get(id);
 		}
 		return answerStat;
 	}

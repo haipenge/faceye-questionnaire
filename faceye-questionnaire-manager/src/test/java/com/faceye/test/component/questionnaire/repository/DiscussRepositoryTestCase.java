@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.questionnaire.entity.Discuss;
 import com.faceye.component.questionnaire.repository.mongo.DiscussRepository;
@@ -34,24 +34,24 @@ public class DiscussRepositoryTestCase extends BaseRepositoryTestCase {
 		Discuss entity = new Discuss();
 		this.discussRepository.save(entity);
 		Iterable<Discuss> entities = this.discussRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Discuss entity = new Discuss();
 		this.discussRepository.save(entity);
-        this.discussRepository.delete(entity.getId());
+        this.discussRepository.deleteById(entity.getId());
         Iterable<Discuss> entities = this.discussRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Discuss entity = new Discuss();
 		this.discussRepository.save(entity);
-		Discuss discuss=this.discussRepository.findOne(entity.getId());
-		Assert.isTrue(discuss!=null);
+		Discuss discuss=this.discussRepository.findById(entity.getId()).get();
+		Assert.assertTrue(discuss!=null);
 	}
 
 	

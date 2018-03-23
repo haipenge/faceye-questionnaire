@@ -13,20 +13,11 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.faceye.component.questionnaire.entity.AnswerStat;
-
 import com.faceye.component.questionnaire.repository.mongo.AnswerStatRepository;
 import com.faceye.component.questionnaire.service.AnswerStatService;
-
-import com.faceye.feature.util.ServiceException;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-/**
- * AnswerStat 服务实现类<br>
- * @author @haipenge <br>
- * haipenge@gmail.com<br>
-*  Create Date:2014年5月20日<br>
- */
-import com.mysema.query.types.Predicate;
+import com.querydsl.core.types.Predicate;
 @Service
 public class AnswerStatServiceImpl extends BaseMongoServiceImpl<AnswerStat, Long, AnswerStatRepository> implements AnswerStatService {
 
@@ -37,7 +28,7 @@ public class AnswerStatServiceImpl extends BaseMongoServiceImpl<AnswerStat, Long
 	
 	
 	@Override
-	public Page<AnswerStat> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<AnswerStat> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

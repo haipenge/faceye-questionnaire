@@ -18,7 +18,7 @@ import com.faceye.component.questionnaire.repository.mongo.customer.Questionnair
 import com.faceye.component.questionnaire.service.QuestionnaireService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 
 @Service
@@ -32,7 +32,7 @@ public class QuestionnaireServiceImpl extends BaseMongoServiceImpl<Questionnaire
 	}
 
 	@Override
-	public Page<Questionnaire> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Questionnaire> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

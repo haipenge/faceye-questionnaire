@@ -29,7 +29,7 @@ import com.faceye.component.weixin.service.oauth2.OAuth2Service;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.Reporter;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.util.bean.BeanContextUtil;
 import com.faceye.feature.util.http.HttpUtil;
 import com.querydsl.core.types.Predicate;
@@ -55,7 +55,7 @@ public class RabbitServiceImpl extends BaseMongoServiceImpl<Rabbit, Long, Rabbit
 	}
 
 	@Override
-	public Page<Rabbit> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Rabbit> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -113,7 +113,7 @@ public class RabbitServiceImpl extends BaseMongoServiceImpl<Rabbit, Long, Rabbit
 //		String appid = this.accountServie.get(accountId).getAppId();
 		String appid="";
 		String code = MapUtils.getString(params, "code");
-		BeanContextUtil.getInstance().getBean(Reporter.class).reporter(params);
+		BeanContextUtil.getBean(Reporter.class).reporter(params);
 		if (StringUtils.isNotEmpty(code)&&StringUtils.isNotEmpty(appid)) {
 			logger.debug(">>FaceYe --> appid is:" + appid + ",code is:" + code);
 			WeixinUser weixinUser = this.oAuth2Service.oauth2(appid, code);

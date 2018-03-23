@@ -57,7 +57,7 @@ public class QuestionnaireTypeController extends BaseController<QuestionnaireTyp
 	public Page<QuestionnaireType> home(HttpServletRequest request, Model model) {
 		Map searchParams=HttpUtil.getRequestParams(request);
 		Page<QuestionnaireType> page = this.service.getPage(searchParams, getPage(searchParams), getSize(searchParams));
-		return page
+		return page;
 	}
 
 	/**
@@ -157,8 +157,9 @@ public class QuestionnaireTypeController extends BaseController<QuestionnaireTyp
 	@RequestMapping("/detail/{id}")
 	@ResponseBody
 	public QuestionnaireType detail(@PathVariable Long id,Model model){
+		QuestionnaireType questionnaireType=null;
 		if(id!=null){
-			QuestionnaireType questionnaireType=this.service.get(id);
+			 questionnaireType=this.service.get(id);
 		}
 		return questionnaireType;
 	}

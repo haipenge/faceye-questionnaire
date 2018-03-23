@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.questionnaire.entity.AnswerStat;
 import com.faceye.component.questionnaire.repository.mongo.AnswerStatRepository;
@@ -34,24 +34,24 @@ public class AnswerStatRepositoryTestCase extends BaseRepositoryTestCase {
 		AnswerStat entity = new AnswerStat();
 		this.answerStatRepository.save(entity);
 		Iterable<AnswerStat> entities = this.answerStatRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		AnswerStat entity = new AnswerStat();
 		this.answerStatRepository.save(entity);
-        this.answerStatRepository.delete(entity.getId());
+        this.answerStatRepository.deleteById(entity.getId());
         Iterable<AnswerStat> entities = this.answerStatRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		AnswerStat entity = new AnswerStat();
 		this.answerStatRepository.save(entity);
-		AnswerStat answerStat=this.answerStatRepository.findOne(entity.getId());
-		Assert.isTrue(answerStat!=null);
+		AnswerStat answerStat=this.answerStatRepository.findById(entity.getId()).get();
+		Assert.assertTrue(answerStat!=null);
 	}
 
 	
